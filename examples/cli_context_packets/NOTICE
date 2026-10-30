@@ -1,0 +1,24 @@
+CLI Context Packets — LangGraph/stdio integration
+
+The integration code is distributed under Apache License 2.0; see LICENSE.
+Complete upstream git-archive snapshots are retained under packets/*/source,
+including each project's original copyright, LICENSE, NOTICE, third-party
+notices, dependency manifests, lockfiles, and tests. Third-party components
+within these snapshots retain their own licenses; the enclosing integration
+does not relicense them.
+
+Upstream projects:
+  Aider-AI/aider
+  QwenLM/qwen-code (includes Google/Gemini-derived Apache-2.0 code)
+  continuedev/continue
+  openai/codex
+
+Exact source commits and per-file hashes are in packets/*/manifest.json.
+No upstream source files have been rewritten. Runtime host adaptations are
+separate files under bridges/ and context_packets/. dist/build-manifest.json
+records the build input files and explicit import substitutions.
+
+Codex's SpawnAgentArgs::fork_mode behavior is ported into workflow.fork_history;
+the complete original handler and its tests remain in the Codex source packet.
+The original codex-utils-string Rust library and its unit tests are compiled
+directly through rust/Cargo.toml, using an independent dependency lockfile.

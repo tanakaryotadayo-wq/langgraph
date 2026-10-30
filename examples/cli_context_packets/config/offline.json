@@ -1,0 +1,8 @@
+{
+  "settings": {
+    "max_rounds": 1,
+    "max_files": 500,
+    "context_tokens": 16000,
+    "bm25_threshold": 0
+  }
+}

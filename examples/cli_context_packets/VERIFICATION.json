@@ -1,0 +1,66 @@
+{
+  "schema": "cli-context-packet-port-validation.v1",
+  "source_packets": {
+    "aider": {
+      "commit": "5dc9490bb35f9729ef2c95d00a19ccd30c26339c",
+      "files": 691,
+      "manifest_sha256": "1276a4ed30cf756738bde166525e6fa0d8046b91c9609bafdaadfc181d4e5777",
+      "raw_git_blob_match": true
+    },
+    "codex": {
+      "commit": "c9750d7f50052b29f53def02b5cf2160ae49a3d9",
+      "files": 9780,
+      "manifest_sha256": "6a1f7bb4a0ea6b947cbea5f895077edbc75a162c8f35ecf27fefc4dede31f7a6",
+      "raw_git_blob_match": true
+    },
+    "continue": {
+      "commit": "5522c6f44ca0ac3528b37244818fbfa39b5af470",
+      "files": 3058,
+      "manifest_sha256": "8e416582408c571bc586fcb55050129a4e4918840eafb2352e5430925562affd",
+      "raw_git_blob_match": true
+    },
+    "qwen": {
+      "commit": "619a601b3965133b9c2e873f10dbe97323b306c7",
+      "files": 13482,
+      "manifest_sha256": "881f5e5ee681cedb7b1dcda53f3de33ee3178e0bb4c19c201e9c11e0cd3d6f8e",
+      "raw_git_blob_match": true
+    }
+  },
+  "total_source_files": 27011,
+  "validation": {
+    "integration_tests_passed": 31,
+    "original_qwen_continue_tests_passed": 135,
+    "original_aider_tests_passed": 13,
+    "original_codex_rust_tests_passed": 24,
+    "total_tests_passed": 203,
+    "failed": 0,
+    "test_command": "bash scripts/check.sh",
+    "log": "verification/checks.log"
+  },
+  "runtime": {
+    "build_manifest": "dist/build-manifest.json",
+    "locks_sha256": {
+      "uv.lock": "db2dec4054c8bdfaf4d9e8e7c8e34bab8c703e557cb2dd5f34728a9f4da8d0ba",
+      "package-lock.json": "bd7c4f81d366d09424e9d5c31e18afee60da99140f7cb671feb5825e1aaa06a4",
+      "rust/Cargo.lock": "35526640235b31a55bb06df58b58c0d8d27087eb88e7d91d889db2530cb0a045"
+    },
+    "typescript_worker_sha256": "ed9de786f6fd1446d02783253de419218f46070daadc06c13f9c2defd2988d7a",
+    "rust_worker_sha256": "911aa3f7a7b4173d528be583101e465b55dfff783d845cb8903a4b560681849b",
+    "tested_model_transports": [
+      "text stdin/stdout",
+      "JSON stdin/stdout",
+      "MCP stdio initialize/call_tool"
+    ],
+    "model_transport_tests_use_explicit_fixtures": true,
+    "actual_user_local_ai_connection": "not configured or validated",
+    "api_keys_added": false
+  },
+  "scope": {
+    "complete_upstream_agent_application_suites_run": false,
+    "collection": "UTF-8 source text; unsupported files and configured limits are reported",
+    "original_source_bytes_and_modes_verified": true,
+    "source_documents_and_observations_retained": true,
+    "environment_draft_saved": true,
+    "environment_published": false
+  }
+}

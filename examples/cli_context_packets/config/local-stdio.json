@@ -1,0 +1,18 @@
+{
+  "model": {
+    "command": [],
+    "format": "text",
+    "timeout": 120,
+    "max_output_bytes": 16000000
+  },
+  "settings": {
+    "max_rounds": 3,
+    "max_branches": 4,
+    "max_files": 500,
+    "max_file_bytes": 2000000,
+    "context_lines": 12,
+    "map_tokens": 4096,
+    "context_tokens": 16000,
+    "synthesize": true
+  }
+}

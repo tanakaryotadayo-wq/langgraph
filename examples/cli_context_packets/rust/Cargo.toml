@@ -1,0 +1,22 @@
+[package]
+name = "context-codex-packet"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+
+[lib]
+name = "codex_utils_string"
+path = "../packets/codex/source/codex-rs/utils/string/src/lib.rs"
+doctest = false
+
+[[bin]]
+name = "codex-context-worker"
+path = "src/main.rs"
+
+[dependencies]
+regex-lite = "0.1.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+pretty_assertions = "1.4"

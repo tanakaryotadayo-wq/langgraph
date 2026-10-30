@@ -1,0 +1,22 @@
+{
+  "name": "cli-context-packet-bridges",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "node bridges/build.mjs"
+  },
+  "dependencies": {
+    "esbuild": "0.25.12",
+    "glob": "14.0.3",
+    "ignore": "7.0.5",
+    "tree-sitter-wasms": "0.1.11",
+    "untildify": "5.0.0",
+    "uri-js": "4.4.1",
+    "web-tree-sitter": "0.21.0",
+    "wink-nlp-utils": "2.1.0"
+  },
+  "devDependencies": {
+    "vitest": "3.2.4"
+  }
+}
