@@ -11,7 +11,7 @@ from pathlib import Path
 import subprocess
 
 BIN = Path("/workspace/.local/postgresql/usr/lib/postgresql/17/bin")
-SOCKET = "/workspace/.local/state/postgresql/socket"
+SOCKET = "/tmp/chatgpt1027-postgresql-socket"
 
 
 def main():

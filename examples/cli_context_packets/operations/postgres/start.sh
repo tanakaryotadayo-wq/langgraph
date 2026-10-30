@@ -15,7 +15,7 @@ if [ ! -f "$PGDATA/PG_VERSION" ]; then
 # Private workspace instance; no TCP listener or API key required.
 listen_addresses = ''
 port = 5432
-unix_socket_directories = '/workspace/.local/state/postgresql/socket'
+unix_socket_directories = '/tmp/chatgpt1027-postgresql-socket'
 unix_socket_permissions = 0700
 max_connections = 20
 shared_buffers = '64MB'
@@ -25,8 +25,13 @@ if [ "$(cat "$PGDATA/PG_VERSION")" != 17 ]; then
   echo 'Existing cluster major version is not 17; refusing to change it' >&2
   exit 1
 fi
-if ! pg_ctl -D "$PGDATA" status >/dev/null 2>&1; then
-  pg_ctl -D "$PGDATA" -l /workspace/.local/state/postgresql/server.log -w -t 30 start
+PG_START_OPTIONS="-c unix_socket_directories=$PGHOST"
+if pg_ctl -D "$PGDATA" status >/dev/null 2>&1; then
+  if ! pg_isready -h "$PGHOST" -p "$PGPORT" >/dev/null 2>&1; then
+    pg_ctl -D "$PGDATA" -o "$PG_START_OPTIONS" -m fast -w -t 30 restart
+  fi
+else
+  pg_ctl -D "$PGDATA" -o "$PG_START_OPTIONS" -l /workspace/.local/state/postgresql/server.log -w -t 30 start
 fi
 if [ "$(psql -X -d postgres -At -v ON_ERROR_STOP=1 -c "SELECT 1 FROM pg_database WHERE datname='chatgpt1027'")" != 1 ]; then
   createdb chatgpt1027

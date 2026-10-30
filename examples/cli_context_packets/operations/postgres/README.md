@@ -8,7 +8,7 @@ bash operations/postgres/start.sh
 source operations/postgres/activate.sh
 ```
 
-PostgreSQL 17をDebianの署名済みパッケージからworkspaceへ展開します。初回は17.11で確認しました。データは`/workspace/.local/state/postgresql/data`、接続は同ディレクトリの`socket`、DB名は`chatgpt1027`です。TCPでは待ち受けず、OSユーザー`agent`のpeer認証で使います。パスワードやAPIキーは不要です。
+PostgreSQL 17をDebianの署名済みパッケージからworkspaceへ展開します。初回は17.11で確認しました。データは`/workspace/.local/state/postgresql/data`、接続ソケットは`/tmp/chatgpt1027-postgresql-socket`、DB名は`chatgpt1027`です。永続データと一時的なIPCを分け、公開対象のworkspaceへUnixソケットを残しません。TCPでは待ち受けず、OSユーザー`agent`のpeer認証で使います。パスワードやAPIキーは不要です。
 
 ```bash
 python operations/postgres/load_context.py \
