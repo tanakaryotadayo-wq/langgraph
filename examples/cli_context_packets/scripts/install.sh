@@ -20,6 +20,7 @@ if ! rustup toolchain list 2>/dev/null | rg -q '^1\.95\.0'; then
   )
 fi
 uv sync --frozen
+uv run --frozen python scripts/normalize_checkout.py
 npm ci --no-audit --no-fund
 npm run build
 cargo +1.95.0 build --locked --manifest-path rust/Cargo.toml
